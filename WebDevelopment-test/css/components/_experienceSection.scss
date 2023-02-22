@@ -1,0 +1,139 @@
+@use "../abstracts/variables" as var;
+@use '../abstracts/mixins' as mix;
+
+#experience-section {
+    background-color: var.$color-light-gray;
+
+
+    .experience-cards {
+        @extend%section;
+        @extend%wrap80;
+
+        .experience-cards-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: space-between;
+
+            .experience-card {
+                width: 48%;
+
+                .experience-card-img {
+                    img {
+                        border-radius: 10px;
+                        box-shadow: (0px 5px 30px rgba(0, 0, 0, 0.2));
+                    }
+                }
+
+                h4 {
+                    text-transform: uppercase;
+                    color: var.$color-primary;
+                    text-align: center;
+                }
+
+                .red-card-paragraph {
+                    color: var.$color-red;
+                    font-weight: var.$font-weight-bolder;
+                    font-style: italic;
+                }
+            }
+        }
+
+    }
+
+    .experience-buy-now {
+        @extend%wrap60;
+        text-align: center;
+
+        .experience-btn {
+            width: 70%;
+            text-transform: uppercase;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 15px;
+            background-color: var.$color-btn-yellow;
+            font-weight: var.$font-weight-bolder;
+            font-size: 20px;
+            color: var.$color-dark;
+            border: 0;
+
+            &:hover {
+                background: linear-gradient(180deg, #FFE600 0%, #FFC700 100%);
+                ;
+                cursor: pointer;
+                transition-delay: .700ms;
+                box-shadow: -1px -1px 25px -16px rgba(0, 0, 0, 0.81);
+                -webkit-box-shadow: -1px -1px 25px -16px rgba(0, 0, 0, 0.81);
+                -moz-box-shadow: -1px -1px 25px -16px rgba(0, 0, 0, 0.81);
+            }
+        }
+
+        .container-payment-guarantee {
+            display: flex;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            align-items: center;
+
+            .logo-img {
+                width: 50px;
+            }
+        }
+    }
+
+    .review-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 30px;
+
+        .review-card {
+            width: 48%;
+            background-color: var.$color-light;
+            position: relative;
+            padding: 35px 15px 10px 15px;
+            border-radius: 15px;
+
+            .quotes {
+                position: absolute;
+                right: 0;
+                top: -3px;
+                width: 20%;
+            }
+
+            .review-card-footer {
+                display: flex;
+                justify-content: space-between;
+
+                .stars {
+                    width: 30%;
+                    display: flex;
+                    align-items: start;
+
+                    img {
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:600px) {
+    #experience-section {
+        .experience-cards .experience-cards-flex .experience-card {
+            width: 100%;
+        }
+
+        .review-container {
+            gap: 10px;
+
+            .review-card {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as var;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: var.$font-weight-normal;
+  font-family: var.$font-family-base;
+  color: var.$color-dark;
+  position: relative;
+
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0;
+  font-weight: var.$font-weight-bold;
+}

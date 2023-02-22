@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as var;
+
+
+.green-line-heading {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: var.$color-primary;
+    color: var.$color-light;
+    position: relative;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: var.$font-weight-bolder;
+
+        .normal-weight {
+            font-weight: var.$font-weight-normal;
+        }
+    }
+
+    .down-pointer {
+        width: 60px;
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        transform: translate(-50%, 50%);
+    }
+}

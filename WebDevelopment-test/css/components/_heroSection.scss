@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as var;
+
+#hero-section {
+    position: relative;
+
+    .hero-section-text {
+        width: 35%;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(50%, -50%);
+        // font-size: 15rem;
+
+
+
+        h1 {
+            margin-bottom: 15px;
+            font-size: 3vw;
+
+            span {
+                color: var.$color-primary;
+                font-weight: var.$font-weight-bolder;
+            }
+        }
+
+        p {
+            font-weight: var.$font-weight-bold;
+            font-size: 2vw;
+
+        }
+
+    }
+}
+
+
+@media (max-width:650px) {
+    #hero-section {
+        .hero-section-text {
+            width: 50%;
+            left: -30px;
+        }
+    }
+}
+
+
+@media (max-width:480px) {
+    #hero-section {
+        .hero-section-text {
+            left: -40px;
+
+            h1 {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+@media (max-width:400px) {
+    #hero-section {
+        .hero-section-text {
+
+            h1 {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

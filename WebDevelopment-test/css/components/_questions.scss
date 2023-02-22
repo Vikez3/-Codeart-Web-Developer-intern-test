@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as var;
+@use '../abstracts/mixins' as mix;
+
+
+#questions {
+    @extend%section;
+    background-color: var.$color-light-gray;
+
+    .accordion-questions-container {
+        @extend%wrap80;
+
+        h2 {
+            text-align: center;
+            font-weight: var.$font-weight-bolder;
+        }
+
+        .accordion-body {
+            margin-top: 30px;
+
+            .accordion {
+
+                .accordion-container {
+                    margin-bottom: 20px;
+
+                    .label {
+                        background-color: var.$color-primary;
+                        position: relative;
+                        color: var.$color-light;
+                        cursor: pointer;
+                        padding: 15px 30px;
+                        border-radius: 15px;
+
+                        &::before {
+                            content: url('../assets/images/keyboard_arrow_up.png');
+                            position: absolute;
+                            top: 50%;
+                            right: 30px;
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    .content {
+                        position: relative;
+                        background: var.$color-light;
+                        height: 0;
+                        overflow: hidden;
+                    }
+                }
+
+                .accordion-container.active {
+                    .content {
+                        border: 1px solid var.$color-primary;
+                        border-radius: 15px;
+                        height: auto;
+                        padding: 15px 30px;
+                    }
+
+                    .label::before {
+                        content: url('../assets/images/keyboard_arrow_down.png');
+                    }
+                }
+
+            }
+        }
+    }
+}

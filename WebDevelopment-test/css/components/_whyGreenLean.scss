@@ -1,0 +1,116 @@
+@use "../abstracts/variables" as var;
+@use '../abstracts/mixins' as mix;
+
+
+#why-green-lean {
+    @extend%section;
+    background-color: var.$color-light-gray;
+
+    .green-lean-container {
+        @extend%wrap80;
+        text-align: center;
+
+        h2 {
+            color: var.$color-primary;
+            font-weight: var.$font-weight-bold;
+        }
+
+        .green-lean-flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .left-list {
+                width: 35%;
+                order: 1;
+            }
+
+            .list-item {
+                display: flex;
+
+                span {
+                    width: 85%;
+                }
+
+                img {
+                    width: 5%;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .flex-end {
+                justify-content: end;
+            }
+
+            .middle-img {
+                width: 20%;
+                order: 2;
+            }
+
+            .right-list {
+                width: 35%;
+                order: 3;
+            }
+        }
+    }
+}
+
+@media (max-width:900px) {
+    #why-green-lean {
+
+        .green-lean-container {
+
+
+            .green-lean-flex-container {
+                flex-wrap: wrap;
+
+                .left-list {
+                    width: 100%;
+                    order: 1;
+                }
+
+                .list-item {
+                    display: flex;
+
+                    span {
+                        width: 85%;
+                    }
+
+                    img {
+                        width: 5%;
+                        margin-left: 5px;
+                        margin-right: 5px;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .flex-end {
+                    justify-content: start;
+                    flex-direction: row-reverse;
+                }
+
+                .middle-img {
+                    width: 50%;
+                    order: 3;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 20px;
+                }
+
+                .right-list {
+                    width: 100%;
+                    order: 2;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

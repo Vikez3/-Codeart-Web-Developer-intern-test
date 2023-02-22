@@ -1,0 +1,168 @@
+@use "../abstracts/variables" as var;
+@use '../abstracts/mixins' as mix;
+
+
+#two-card {
+    @extend %section;
+
+    .container-60 {
+        @extend %wrap60;
+        text-align: center;
+
+        h2 {
+            font-weight: var.$font-weight-normal;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+
+            span {
+                color: var.$color-primary;
+                font-weight: var.$font-weight-bold;
+            }
+        }
+
+        .header-span {
+            font-weight: var.$font-weight-bolder;
+            font-size: 12px;
+        }
+
+        .flex-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+
+            .card {
+                border: 1px solid var.$color-light-gray;
+                border-radius: 10px;
+                width: 50%;
+
+                .card-img {
+                    img {
+                        height: 208px;
+                        object-fit: contain;
+                    }
+                }
+
+                .card-header {
+                    background-color: var.$color-secondary;
+                    border-top-right-radius: 10px;
+                    border-top-left-radius: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+
+                    h4 {
+                        margin: 0;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .card-body {
+                    padding: 20px;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+
+                    .heading-p {
+                        font-weight: var.$font-weight-bolder;
+
+                        span {
+                            color: var.$color-red
+                        }
+                    }
+
+                    .card-price {
+                        color: var.$color-primary;
+                        font-weight: var.$font-weight-bolder;
+                        font-size: 35px;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    .card-btn {
+                        width: 100%;
+                        border: 0;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        border-radius: 15px;
+                        background-color: var.$color-btn-yellow;
+                        color: var.$color-dark;
+
+                        &:hover {
+                            background: linear-gradient(180deg, #FFE600 0%, #FFC700 100%);
+                            ;
+                            cursor: pointer;
+                            transition-delay: .700ms;
+                            box-shadow: -1px -1px 25px -16px rgba(0, 0, 0, 0.81);
+                            -webkit-box-shadow: -1px -1px 25px -16px rgba(0, 0, 0, 0.81);
+                            -moz-box-shadow: -1px -1px 25px -16px rgba(0, 0, 0, 0.81);
+                        }
+
+                        .btn-buy {
+                            font-weight: var.$font-weight-bolder;
+                            font-size: 18px;
+                        }
+
+                        .btn-shipping-span {
+                            display: block;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .regular-price {
+                        text-decoration: line-through;
+                    }
+
+                    .payment-container {
+                        width: 60%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-top: 10px;
+
+                        .payment-flex {
+                            display: flex;
+
+                        }
+                    }
+                }
+            }
+
+            .card:nth-child(2) {
+                .card-header {
+                    background-color: var.$color-primary;
+                    color: var.$color-light;
+                }
+
+                .card-body {
+                    background-color: var.$color-light-gray;
+                }
+            }
+        }
+    }
+
+    .container-payment-guarantee {
+        display: flex;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        align-items: center;
+
+        .logo-img {
+            width: 50px;
+        }
+    }
+}
+
+@media (max-width:500px) {
+    #two-card .container-60 {
+        h2 {
+            font-size: 18px;
+        }
+
+        .flex-container {
+            flex-wrap: wrap;
+
+            .card {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@use "../abstracts/variables" as var;
+@use '../abstracts/mixins' as mix;
+
+#ingredients-section {
+    @extend%wrap80;
+    @extend%section;
+
+    .ingredients-heading {
+        text-align: center;
+
+        h2 {
+            color: var.$color-primary;
+            margin-bottom: 15px;
+            font-weight: var.$font-weight-bolder;
+
+        }
+    }
+
+    .ingredients-listing {
+
+        .ingredient-card {
+            padding: 20px;
+            border-radius: 15px;
+            background-color: var.$color-light-gray;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+
+            .ingredient-card-body {
+                width: 65%;
+                padding-right: 10px;
+
+                h3 {
+                    color: var.$color-primary;
+                    font-size: 22px;
+                    font-weight: var.$font-weight-bolder;
+                    margin-bottom: 10px;
+                }
+
+                ul li {
+                    line-height: 1.5;
+                }
+            }
+
+            .ingredient-card-img {
+                width: 35%;
+            }
+        }
+    }
+}
+
+@media (max-width:900px) {
+    #ingredients-section .ingredients-listing .ingredient-card {
+        .ingredient-card-body {
+            width: 100%;
+            padding-right: 0;
+            padding-bottom: 10px;
+        }
+
+        .ingredient-card-img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width:420px) {
+    #ingredients-section .ingredients-listing .ingredient-card {
+        .ingredient-card-body {
+            font-size: 14px;
+        }
+
+    }
+}

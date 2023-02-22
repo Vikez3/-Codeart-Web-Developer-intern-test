@@ -1,0 +1,86 @@
+@use "../abstracts/variables" as var;
+@use '../abstracts/mixins' as mix;
+
+
+#green-box-gray-background {
+    background-color: var.$color-light-gray;
+    @extend%section;
+}
+
+#green-box {
+    @extend%wrap80;
+    background-color: var.$color-primary;
+    padding: 30px 15px;
+    border-radius: 15px;
+    color: var.$color-light;
+    background-image: url('../assets/images/Vector.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 110%;
+    background-position-y: 20vh;
+
+    h3 {
+        text-align: center;
+        font-weight: var.$font-weight-bold;
+        margin-bottom: 30px;
+    }
+
+
+    .green-box-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .green-box-body {
+            width: 75%;
+            z-index: 1111;
+            order: 1;
+        }
+
+        .green-box-img {
+            width: 25%;
+            z-index: 1111;
+            order: 2;
+
+        }
+
+        .bottom-text {
+            order: 3;
+            width: 100%;
+
+        }
+    }
+}
+
+@media (max-width:900px) {
+
+    #green-box {
+
+        .green-box-container {
+
+
+            .green-box-body {
+                width: 100%;
+                order: 1;
+            }
+
+            .green-box-img {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                order: 3;
+                position: relative;
+
+                img {
+                    position: static;
+                    transform: translate(18%);
+                }
+
+            }
+
+            .bottom-text {
+                width: 100%;
+                order: 2;
+            }
+        }
+    }
+}
